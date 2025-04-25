@@ -1,0 +1,12 @@
+.coordContainer {
+    span:first-of-type {
+        display: block;
+        font-size: 14px;
+    }
+}
+
+.coorValue{
+    font-size: 32px;
+    color: #6C63FF;
+    font-weight: 900;
+}

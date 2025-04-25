@@ -1,0 +1,62 @@
+:root {
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+  }
+  
+  #root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem;
+  }
+  
+  body {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+
+  
+hr {
+    border: none;
+    border-top: 3px dashed #D9D9D9;
+    margin: 30px auto;
+    width: 150px;
+
+}
+
+
+@media (min-width: 730px) {
+  .locationInfo {
+      height: 100%;
+      position: fixed;
+  }
+
+  .locationInfo-content {
+      max-width: 1200px;
+      margin: 100px auto;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+  }
+  
+  .top-five {
+      grid-area: span 2/2;
+  }
+  .popular-address{
+      grid-area: 2;
+      
+  }
+
+  .topFive {
+    margin-top: -75px;
+
+  }
+  
+}
