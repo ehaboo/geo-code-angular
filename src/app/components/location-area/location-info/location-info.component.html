@@ -1,23 +1,20 @@
-<div className="locationInfo">
-    <div className="locationInfo-content">
-        
-            <div className="address-coordinates">
-                <!-- <AddressCoordinates coordinates={coordinates}/> -->
-                 <app-address-coordinates></app-address-coordinates>
-            </div>
-        
-        
-        <div className="popular-address">
-            <!-- <PopularAddress popularSearch={popularSearch} /> -->
-             <app-popular-address></app-popular-address>
-        </div>
-        
-       
-        <div className="top-five">
-            <!-- <TopFive popularSearchList={popularSearchList}/> -->
-             <app-top-five></app-top-five>
-        </div>
-        
-    </div>
-    <button onClick={resetValues}>סיום</button>
+<div class="locationInfo" [ngStyle]="style">
+
+     <div class="locationInfo-content">
+          <div class="address-coordinates">
+               <app-address-coordinates [address]="searchVal"></app-address-coordinates>
+          </div>
+
+          <div class="popular-address">
+               <app-popular-address></app-popular-address>
+          </div>
+
+          <div class="top-five">
+               <app-top-five></app-top-five>
+          </div>
+
+     </div>
+
+     <button (click)="resetValues()">סיום</button>
+     
 </div>

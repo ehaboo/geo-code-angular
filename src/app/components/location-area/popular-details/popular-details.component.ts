@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CoordinatesModel } from '../../../models/coordinates.model';
 
 @Component({
   selector: 'app-popular-details',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './popular-details.component.css'
 })
 export class PopularDetailsComponent {
+
+  @Input()
+  public popular:CoordinatesModel;
 
 }

@@ -8,9 +8,9 @@
     width: 300px;
     background-color:#353535 ;
     margin-bottom: 7px;
+
     p {
         margin: 5px 0;
-
     }
 
     p > span:first-of-type {
