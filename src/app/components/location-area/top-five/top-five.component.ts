@@ -3,6 +3,7 @@ import { CoordinatesModel } from '../../../models/coordinates.model';
 import { LocationService } from '../../../services/location.service';
 import { PopularDetailsComponent } from '../popular-details/popular-details.component';
 import { CommonModule } from '@angular/common';
+import { NotifyService } from '../../../services/notify-service';
 
 @Component({
   selector: 'app-top-five',
@@ -12,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class TopFiveComponent implements OnInit{
 
-  public constructor(private locationServices:LocationService){}
+  public constructor(private locationServices:LocationService,      private notifyService:NotifyService ){}
   public popularSearchList: CoordinatesModel[]; 
 
 
@@ -20,7 +21,7 @@ export class TopFiveComponent implements OnInit{
     try {
       this.popularSearchList = await this.locationServices.getPopularSearchList();       
     } catch (error:any) {
-      console.log(error.message);
+      this.notifyService.error(error); 
     }
   }
 }

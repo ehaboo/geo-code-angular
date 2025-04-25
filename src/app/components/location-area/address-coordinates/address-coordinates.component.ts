@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { LocationService } from '../../../services/location.service';
 import { CoordinatesModel } from '../../../models/coordinates.model';
+import { NotifyService } from '../../../services/notify-service';
 
 @Component({
   selector: 'app-address-coordinates',
@@ -11,7 +12,7 @@ import { CoordinatesModel } from '../../../models/coordinates.model';
 })
 export class AddressCoordinatesComponent implements OnInit{
   
-  public constructor(private locationServices:LocationService){}
+  public constructor(private locationServices:LocationService, private notifyService:NotifyService){}
   
   public coordinates:CoordinatesModel; 
 
@@ -21,7 +22,7 @@ export class AddressCoordinatesComponent implements OnInit{
     try {
       this.coordinates = await this.locationServices.getCoordinats(this.address)
     } catch (error:any) {
-      console.log(error.message); 
+      this.notifyService.error(error); 
     }
   }
 }

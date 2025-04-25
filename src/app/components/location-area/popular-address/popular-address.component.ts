@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from '../../../services/location.service';
 import { CoordinatesModel } from '../../../models/coordinates.model';
+import { NotifyService } from '../../../services/notify-service';
 
 @Component({
   selector: 'app-popular-address',
@@ -10,14 +11,15 @@ import { CoordinatesModel } from '../../../models/coordinates.model';
 })
 export class PopularAddressComponent implements OnInit{
 
-  public constructor(private locationServices:LocationService){}
+  public constructor(private locationServices:LocationService,private notifyService:NotifyService ){}
   public popularSearch:CoordinatesModel; 
 
   public async ngOnInit():Promise<void> {
     try {
       this.popularSearch = await this.locationServices.getPopularSearch();      
     } catch (error:any) {
-      console.log(error.message);
+      this.notifyService.error(error); 
+      
     }
   }
 
