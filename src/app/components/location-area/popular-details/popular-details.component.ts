@@ -5,11 +5,9 @@ import { CoordinatesModel } from '../../../models/coordinates.model';
   selector: 'app-popular-details',
   imports: [],
   templateUrl: './popular-details.component.html',
-  styleUrl: './popular-details.component.css'
+  styleUrl: './popular-details.component.css',
 })
 export class PopularDetailsComponent {
-
   @Input()
-  public popular:CoordinatesModel;
-
+  public popular: CoordinatesModel;
 }

@@ -7,20 +7,22 @@ import { NotifyService } from '../../../services/notify-service';
   selector: 'app-popular-address',
   imports: [],
   templateUrl: './popular-address.component.html',
-  styleUrl: './popular-address.component.css'
+  styleUrl: './popular-address.component.css',
 })
-export class PopularAddressComponent implements OnInit{
+export class PopularAddressComponent implements OnInit {
+  public constructor(
+    private locationServices: LocationService,
+    private notifyService: NotifyService
+  ) {}
 
-  public constructor(private locationServices:LocationService,private notifyService:NotifyService ){}
-  public popularSearch:CoordinatesModel; 
+  public popularSearch: CoordinatesModel;
 
-  public async ngOnInit():Promise<void> {
+  public async ngOnInit(): Promise<void> {
     try {
-      this.popularSearch = await this.locationServices.getPopularSearch();      
-    } catch (error:any) {
-      this.notifyService.error(error); 
-      
+      this.popularSearch = 
+        await this.locationServices.getPopularSearch();
+    } catch (error: any) {
+      this.notifyService.error(error);
     }
   }
-
 }

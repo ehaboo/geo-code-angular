@@ -1,13 +1,11 @@
 <div>
-
     <h3>
-        החיפוש הפופולרי ביותר   
-        <span>|</span> 
-        <span>{{popularSearch?.address}}</span>
+        החיפוש הפופולרי ביותר
+        <span>|</span>
+        <span>{{popularSearch?.address || "אין תוצאות להצגה."}}</span>
     </h3>
     <p>
-        <span class="hitsVal">{{popularSearch?.hits}}</span>
+        <span class="hitsVal">{{popularSearch?.hits || 0}}</span>
         <span>בקשות</span>
     </p>
-
 </div>

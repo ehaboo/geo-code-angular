@@ -8,10 +8,7 @@ export const appConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(withFetch())
-
+    provideHttpClient(withFetch()),
   ],
-  coordinatesUrl: "http://localhost:5000/api/coordinates",
-  popularSearchUrl: "http://localhost:5000/api/popular-search", 
-  popularSearchListUrl: "http://localhost:5000/api/popular-search-list"
+  apiUrl: 'http://localhost:8001/api',
 };

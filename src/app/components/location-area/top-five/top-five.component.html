@@ -1,6 +1,6 @@
 <div class="topFive">
     <h3>רשימת 5 החיפושים הפופולריים</h3>
-    <div *ngIf="popularSearchList">
-        <app-popular-details  *ngFor="let p of popularSearchList" [popular] = p></app-popular-details>
+    <div>
+        <app-popular-details *ngFor="let p of popularSearchList" [popular]=p></app-popular-details>
     </div>
 </div>

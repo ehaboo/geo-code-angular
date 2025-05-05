@@ -1,20 +1,14 @@
 <div class="locationInfo" [ngStyle]="style">
-
      <div class="locationInfo-content">
           <div class="address-coordinates">
                <app-address-coordinates [address]="searchVal"></app-address-coordinates>
           </div>
-
           <div class="popular-address">
                <app-popular-address></app-popular-address>
           </div>
-
           <div class="top-five">
                <app-top-five></app-top-five>
           </div>
-
      </div>
-
      <button (click)="resetValues()">סיום</button>
-     
 </div>

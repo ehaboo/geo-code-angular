@@ -9,19 +9,25 @@ import { NotifyService } from '../../../services/notify-service';
   selector: 'app-top-five',
   imports: [PopularDetailsComponent, CommonModule],
   templateUrl: './top-five.component.html',
-  styleUrl: './top-five.component.css'
+  styleUrl: './top-five.component.css',
 })
-export class TopFiveComponent implements OnInit{
+export class TopFiveComponent implements OnInit {
+  public popularSearchList: CoordinatesModel[] = Array(5).fill({
+    address: '-',
+    hits: 0,
+  });
 
-  public constructor(private locationServices:LocationService,      private notifyService:NotifyService ){}
-  public popularSearchList: CoordinatesModel[]; 
-
+  public constructor(
+    private locationServices: LocationService,
+    private notifyService: NotifyService
+  ) {}
 
   public async ngOnInit() {
     try {
-      this.popularSearchList = await this.locationServices.getPopularSearchList();       
-    } catch (error:any) {
-      this.notifyService.error(error); 
+      this.popularSearchList =
+        await this.locationServices.getPopularSearchList();
+    } catch (error: any) {
+      this.notifyService.error(error);
     }
   }
 }

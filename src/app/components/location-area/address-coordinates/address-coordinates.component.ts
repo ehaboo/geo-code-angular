@@ -5,24 +5,27 @@ import { NotifyService } from '../../../services/notify-service';
 
 @Component({
   selector: 'app-address-coordinates',
-  standalone:true,
+  standalone: true,
   imports: [],
   templateUrl: './address-coordinates.component.html',
-  styleUrl: './address-coordinates.component.css'
+  styleUrl: './address-coordinates.component.css',
 })
-export class AddressCoordinatesComponent implements OnInit{
-  
-  public constructor(private locationServices:LocationService, private notifyService:NotifyService){}
-  
-  public coordinates:CoordinatesModel; 
+export class AddressCoordinatesComponent implements OnInit {
+  public constructor(
+    private locationServices: LocationService,
+    private notifyService: NotifyService
+  ) {}
 
-  @Input() address:string;
- 
-  public async ngOnInit():Promise<void> {
+  public coordinates: CoordinatesModel;
+
+  @Input() address: string;
+
+  public async ngOnInit(): Promise<void> {
     try {
-      this.coordinates = await this.locationServices.getCoordinats(this.address)
-    } catch (error:any) {
-      this.notifyService.error(error); 
+      this.coordinates = 
+        await this.locationServices.getCoordinats(this.address);
+    } catch (error: any) {
+      this.notifyService.error(error);
     }
   }
 }

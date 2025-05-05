@@ -1,17 +1,11 @@
 <div>
-  <app-location-info 
-    *ngIf="isDisplay" 
-    [searchVal]="address" 
-    (reset)="resetValues($event)"
+  <app-location-info *ngIf="isDisplay" [searchVal]="address" (reset)="resetValues($event)"
     [styleProp]="isDisplay? 'block': 'none'">
   </app-location-info>
-
-  <form ngNativeValidate class="container" (ngSubmit)="handleSubmit($event)">
-    
+  <form class="container" (ngSubmit)="handleSubmit($event)">
     <label>כתובת</label>
-    <input type="text" name="address" [(ngModel)]="address" required>
+    <input type="text" name="address" [(ngModel)]="address">
     <hr />
     <button>הצג את הקואורדינטות</button>
-    
   </form>
 </div>

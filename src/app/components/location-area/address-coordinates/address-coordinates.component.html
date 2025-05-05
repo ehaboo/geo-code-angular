@@ -1,17 +1,15 @@
 <div>
     <h3>
         הקואורדינטות של הכתובת
-        <span>|</span> 
-        <span>{{coordinates?.address}}</span>
+        <span>|</span>
+        <span>{{coordinates?.address || "לא נמצאה כתובת כזו."}}</span>
     </h3>
-
     <p class="coordContainer">
         <span>קו רוחב</span>
-        <span class="coorValue">{{coordinates?.lat}}</span>
+        <span class="coorValue">{{coordinates?.lat || 0}}</span>
     </p>
-    
     <p class="coordContainer">
         <span>קו אורך</span>
-        <span class="coorValue">{{coordinates?.lng}}</span>
+        <span class="coorValue">{{coordinates?.lng || 0}}</span>
     </p>
 </div>
